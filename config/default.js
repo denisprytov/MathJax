@@ -89,7 +89,7 @@ MathJax.Hub.Config({
   //   If you change the input jax, you may need to include the appropriate
   //   preprocessor in the extensions array below.
   //  
-  jax: ["input/TeX", "output/HTML-CSS"],
+  jax: ["input/TeX", "output/CommonHTML"],
   
   //
   //  A comma-separated list of extensions to load at startup.  The default
@@ -281,7 +281,7 @@ MathJax.Hub.Config({
     //  be able to handle that.
     //
     inlineMath: [
-//    ['$','$'],      // uncomment this for standard TeX math delimiters
+      ['$','$'],      // uncomment this for standard TeX math delimiters
       ['\\(','\\)']
     ],
 
@@ -525,7 +525,9 @@ MathJax.Hub.Config({
     //        bold: ['{\\bf #1}', 1]
     //      }
     //
-    Macros: {},
+    Macros: {
+	    code: ["{\\bf\\verb|#1|}", 1]
+    },
     
     //
     //  Equation numbering parameters.
@@ -767,7 +769,7 @@ MathJax.Hub.Config({
       //    when false, only process linebreak="newline",
       //    when true, line breaks are inserted automatically in long expressions.
       //
-      automatic: false,
+      automatic: true,
 
       //
       //  This controls how wide the lines of mathematics can be
